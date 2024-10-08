@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mubarakshin.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,22 @@ namespace Mubarakshin.Database
 
             }
         }
+        public string NewPrice
+        {
+            get
+            {
+                if (ActiveDiscountId != null)
+                {
+                    string a = Convert.ToString(Price - (Price / 100 * DatabaseConnectionClass.DatabaseConnection.ActiveDiscount.Where(c => c.ActiveDiscountId == ActiveDiscountId).First().Value));
+                    return "\t" + a;
+                }
+                else
+                {
+                    return null;
+                }
 
+            }
+        }
 
     }
 }
