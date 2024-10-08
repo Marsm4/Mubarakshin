@@ -31,7 +31,11 @@
 						<Border BorderBrush="Gray" BorderThickness="1" Margin="5">
 							<Image Source="{Binding Image}" 
                                    Height="100" 
-                                   Width="100"/>
+                                   Width="100">
+								<Image.Effect>
+									<DropShadowEffect Color="Bisque" BlurRadius="5" ShadowDepth="3"/>
+								</Image.Effect>
+							</Image>
 						</Border>
 
 						<StackPanel Orientation="Vertical"
@@ -44,9 +48,12 @@
                                        TextWrapping="Wrap" 
                                        FontWeight="Bold" 
                                        TextDecorations="Underline" 
-                                       FontSize="16"/>
-							
-							
+									   
+                                       FontSize="16">
+								<TextBlock.Effect>
+									<DropShadowEffect Color="Blue" BlurRadius="1" ShadowDepth="1"/>
+								</TextBlock.Effect>
+							</TextBlock>
 
 							
 							<TextBlock Text="{Binding Description}" 
